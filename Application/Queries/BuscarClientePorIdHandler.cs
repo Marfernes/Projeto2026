@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Application.Queries
 {
-    internal class BuscarClientePorIdHandler
+    public class BuscarClientePorIdHandler
     {
         private readonly IClienteRepository _repository;
 
