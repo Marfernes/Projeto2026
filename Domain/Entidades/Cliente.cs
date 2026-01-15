@@ -1,4 +1,4 @@
-﻿using Application;
+﻿using Application.Shared;
 using Domain.ValueObject;
 
 namespace Domain.Entidades
