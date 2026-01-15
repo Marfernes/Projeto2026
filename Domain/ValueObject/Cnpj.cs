@@ -1,5 +1,4 @@
-﻿
-using Domain.Excecoes;
+﻿using Application;
 
 namespace Domain.ValueObject
 {
@@ -10,11 +9,24 @@ namespace Domain.ValueObject
         {
             Valor = valor;
         }
-        public static Cnpj CriarCnpj(string valor)
-        { 
-            if(string.IsNullOrWhiteSpace(valor))
-                throw new DominioException("CNPJ não pode ser vazio.");
-            return new Cnpj(valor); 
+        public static Result<Cnpj> CriarCnpj(string valor)
+        {
+            if (string.IsNullOrWhiteSpace(valor))
+                return Result<Cnpj>.Falha("CNPJ é obrigatório");
+
+            valor = valor
+                .Replace(".", "")
+                .Replace("/", "")
+                .Replace("-", "");
+
+            if (valor.Length != 14)
+                return Result<Cnpj>.Falha("CNPJ deve conter 14 dígitos.");
+
+            if (!valor.All(char.IsDigit))
+                return Result<Cnpj>.Falha("CNPJ deve conter apenas números.");
+
+            return Result<Cnpj>.Ok(new Cnpj(valor));
+
         }
 
         public override bool Equals(object? obj)
