@@ -1,4 +1,6 @@
 ﻿
+using Domain.Excecoes;
+
 namespace Domain.ValueObject
 {
     public sealed class Cnpj
@@ -7,6 +9,12 @@ namespace Domain.ValueObject
         public Cnpj(string valor) 
         {
             Valor = valor;
+        }
+        public static Cnpj CriarCnpj(string valor)
+        { 
+            if(string.IsNullOrWhiteSpace(valor))
+                throw new DominioException("CNPJ não pode ser vazio.");
+            return new Cnpj(valor); 
         }
 
         public override bool Equals(object? obj)
