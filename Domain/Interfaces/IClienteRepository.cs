@@ -8,5 +8,6 @@ namespace Domain.Interfaces
         Task Adicionar(Cliente cliente);
         Task<Cliente?> BuscarPorId(Guid id);
         Task<bool> ExisteCnpj(Cnpj cnpj);
+        Task<Cliente?> ObterPorCnpj(string cnpj);
     }
 }

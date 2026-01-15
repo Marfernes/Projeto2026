@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36327.8 d17.14
+VisualStudioVersion = 17.14.36327.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{1FD8EF9B-D5B1-4454-9CA6-509E9A1C1CA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{5D0B0860-22F0-4C93-ABEE-3A17543561BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queries", "Queries", "{EFA2BDA5-95DF-4606-9AF5-BC53C4ED485C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,7 @@ Global
 		{D4D53116-68BC-4BF2-B6C2-F1E7B357866C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{1FD8EF9B-D5B1-4454-9CA6-509E9A1C1CA6} = {1F235620-0428-4828-B98C-812F667ADC28}
 		{5D0B0860-22F0-4C93-ABEE-3A17543561BE} = {4088715A-0C3A-42A6-B76F-DA0FF82A934F}
+		{EFA2BDA5-95DF-4606-9AF5-BC53C4ED485C} = {1F235620-0428-4828-B98C-812F667ADC28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D025C79-EEF6-4C69-94AF-FEEEEF61FD47}

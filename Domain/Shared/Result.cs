@@ -1,4 +1,4 @@
-﻿namespace Application.Shared
+﻿namespace Domain.Shared
 {
     public class Result<T>
     {

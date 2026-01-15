@@ -2,7 +2,7 @@
 using Domain.Interfaces;
 using Domain.ValueObject;
 
-namespace Infrastructure
+namespace Infrastructure.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
@@ -28,5 +28,11 @@ namespace Infrastructure
         {
             return Task.FromResult(_clientes.Any(c => c.Cnpj.Equals(cnpj)));
         }
+        public async Task<Cliente?> ObterPorCnpj(string cnpj)
+        {
+            return _clientes.FirstOrDefault(c => c.Cnpj.Valor == cnpj);
+        }
+
     }
+
 }
