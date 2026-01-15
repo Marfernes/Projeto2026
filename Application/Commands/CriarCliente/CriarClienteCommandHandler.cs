@@ -22,8 +22,8 @@ public class CriarClienteCommandHandler
             return Result<Guid>.Falha(cnpjResult.Erro!);
 
 
-        var clienteExistente = await _repository.ObterPorCnpj(cnpjResult.Valor!.Valor);
-        if (clienteExistente is not null)
+        var existe = await _repository.ExisteCnpj(cnpjResult.Valor!);
+        if (existe)
             return Result<Guid>.Falha("Já existe um cliente cadastrado com este CNPJ.");
 
         var clienteResult = Cliente.CriarCliente(command.NomeFantasia, cnpjResult.Valor);

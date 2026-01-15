@@ -6,12 +6,7 @@ namespace Infrastructure.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private readonly List<Cliente> _clientes;
-
-        public ClienteRepository(List<Cliente> clientes)
-        {
-            _clientes = clientes;
-        }
+        private readonly List<Cliente> _clientes = new();
 
         public Task Adicionar(Cliente cliente)
         {
