@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route("api/clientes")]
+    [Route("clientes")]
     public class ClientesController : ControllerBase
     {
         private readonly CriarClienteCommandHandler _criarHandler;
@@ -17,6 +17,7 @@ namespace WebApi.Controllers
             _criarHandler = criarHandler;
             _obterHandler = obterHandler;
         }
+
         [HttpPost]
         public async Task<IActionResult> CriarCliente([FromBody] CriarClienteCommand command)
         {
@@ -27,6 +28,8 @@ namespace WebApi.Controllers
 
             return Ok(resultado.Valor);
         }
+
+
 
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> ObterCliente(Guid id)

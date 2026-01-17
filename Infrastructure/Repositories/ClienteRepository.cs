@@ -6,7 +6,7 @@ namespace Infrastructure.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private readonly List<Cliente> _clientes = new();
+        private static readonly List<Cliente> _clientes = new();
 
         public Task Adicionar(Cliente cliente)
         {
@@ -23,9 +23,9 @@ namespace Infrastructure.Repositories
         {
             return Task.FromResult(_clientes.Any(c => c.Cnpj.Equals(cnpj)));
         }
-        public async Task<Cliente?> ObterPorCnpj(string cnpj)
+        public Task<Cliente?> ObterPorCnpj(string cnpj)
         {
-            return _clientes.FirstOrDefault(c => c.Cnpj.Valor == cnpj);
+            return Task.FromResult(_clientes.FirstOrDefault(c => c.Cnpj.Valor == cnpj));
         }
 
     }
