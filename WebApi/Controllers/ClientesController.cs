@@ -31,7 +31,7 @@ namespace WebApi.Controllers
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> ObterCliente(Guid id)
         {
-            var resultado = await _obterHandler.Handle(new ObterClientePorIdQuery(id));
+            var resultado = await _obterHandler.Handle(new BuscarClientePorIdQuery(id));
 
             if (!resultado.Sucesso || resultado.Valor == null) 
                 return NotFound(resultado.Erro ?? "Cliente não encontrado");

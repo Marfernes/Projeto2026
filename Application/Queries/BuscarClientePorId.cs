@@ -1,3 +1,3 @@
 ﻿namespace Application.Queries;
 
-public record ObterClientePorIdQuery(Guid Id);
+public record BuscarClientePorIdQuery(Guid Id);

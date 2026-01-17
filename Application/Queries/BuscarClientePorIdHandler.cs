@@ -16,7 +16,7 @@ namespace Application.Queries
             _repository = repository;
         }
 
-        public async Task<Result<Cliente>> Handle(ObterClientePorIdQuery query)
+        public async Task<Result<Cliente>> Handle(BuscarClientePorIdQuery query)
         {
             var cliente = await _repository.BuscarPorId(query.Id);
             if (cliente is null)
